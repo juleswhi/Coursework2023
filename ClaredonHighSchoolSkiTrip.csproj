@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\netcoreapp3.1\chooseReportMenu.txt" />
+    <Content Include="bin\Debug\netcoreapp3.1\temp.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\netcoreapp3.1\MainMenuOptions.csv" />
+    <None Include="bin\Debug\netcoreapp3.1\ReportMenuOptions.csv" />
+    <None Include="bin\Debug\netcoreapp3.1\slopeTimes.csv" />
+    <None Include="bin\Debug\netcoreapp3.1\Staff.csv" />
+    <None Include="bin\Debug\netcoreapp3.1\Students.csv" />
+  </ItemGroup>
+
+</Project>
