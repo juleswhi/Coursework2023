@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClaredonHighSchoolSkiTrip")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9199e4bc28e11f6011dcc84050fb78087160cf58")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46b2205732385c2839a337f183d397937fcc4cbd")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClaredonHighSchoolSkiTrip")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClaredonHighSchoolSkiTrip")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

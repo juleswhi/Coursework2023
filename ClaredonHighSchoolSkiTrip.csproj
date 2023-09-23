@@ -7,10 +7,10 @@
 
   <ItemGroup>
     <None Include="bin\Debug\netcoreapp7.0\MainMenuOptions.csv" />
-    <None Include="bin\Debug\netcoreapp8.0\ReportMenuOptions.csv" />
-    <None Include="bin\Debug\netcoreapp3.1\slopeTimes.csv" />
-    <None Include="bin\Debug\netcoreapp3.1\Staff.csv" />
-    <None Include="bin\Debug\netcoreapp3.1\Students.csv" />
+    <None Include="bin\Debug\netcoreapp7.0\ReportMenuOptions.csv" />
+    <None Include="bin\Debug\netcoreapp7.0\slopeTimes.csv" />
+    <None Include="bin\Debug\netcoreapp7.0\Staff.csv" />
+    <None Include="bin\Debug\netcoreapp7.0\Students.csv" />
   </ItemGroup>
 
 </Project>
