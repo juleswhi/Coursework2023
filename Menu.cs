@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using Utils;
 
 namespace ClaredonHighSchoolSkiTrip
 {
@@ -12,17 +8,18 @@ namespace ClaredonHighSchoolSkiTrip
         // This class is responsible for management of Menu System
         protected string menuname { get; set; }
         protected string[] options { get; set; }
+        protected string ascii { get; set; }
 
         // Constructor calls GetOptions, which chooses the functionality of the Menu
-        public Menu(string menuname, string[] options) { this.menuname = menuname; this.options = options; }
+        public Menu(string menuname, string[] options, string ascii) { this.menuname = menuname; this.options = options; this.ascii = ascii; }
 
         public void OpenMenu(string[] options)
         {
-            
-            DisplayMenu display = new DisplayMenu(menuname, options);
+
+            DisplayMenu display = new DisplayMenu(ascii, options);
             int i = display.RunMenu();
             GetOptions(menuname, options, i);
-            
+
         }
     }
 
@@ -45,27 +42,28 @@ namespace ClaredonHighSchoolSkiTrip
             if (menuname == "Main Menu") MainMenuOptions(options, i);
             if (menuname == "User Options") UserOptions(options, i);
             if (menuname == "Report Menu") ReportMenuOptions(options, i);
-            
+
         }
 
         private void MainMenuOptions(string[] options, int i)
         {
             // Instantiate Classes
             AddStudentDetails student = new AddStudentDetails("Students.csv");
+            SkiTimeInput skiTime = new SkiTimeInput();
             Quiz quiz = new Quiz();
             ReportManager reportManager = new ReportManager();
 
 
-            if (options[i] == "Reports") reportManager.CreateReportMenu();
-            if (options[i] == "Add Student") student.addStudent();
-            if (options[i] == "Add Slope Time") student.addSlopeTime(null);
-            if (options[i] == "Ski Quiz") quiz.StartQuiz();
+            if (options[i] == "Student Reports") reportManager.CreateReportMenu();
+            if (options[i] == "Add a Student") student.addStudent();
+            if (options[i] == "Record a Student's Slope Times") skiTime.addSlopeTime();
+            if (options[i] == "Take The Ski Quiz") quiz.StartQuiz();
             if (options[i] == "Exit") Environment.Exit(0);
         }
 
         private void UserOptions(string[] options, int i)
         {
-            
+
         }
 
         private void ReportMenuOptions(string[] options, int i)
@@ -73,9 +71,9 @@ namespace ClaredonHighSchoolSkiTrip
 
             ReportManager reportManager = new ReportManager();
 
-            if (options[i] == "Generic") reportManager.CreateReport(0);
-            if (options[i] == "Ski Knowledge") reportManager.CreateReport(1);
-            if (options[i] == "Ski Times") reportManager.CreateReport(2);
+            if (options[i] == "Show All Student Details") reportManager.CreateReport(0);
+            if (options[i] == "Sort Students by Ski Times") reportManager.CreateReport(1);
+            if (options[i] == "Sort Students by groups from the quiz") reportManager.CreateReport(2);
             if (options[i] == "Main Menu") GoToMainMenu();
 
         }
@@ -115,11 +113,27 @@ namespace ClaredonHighSchoolSkiTrip
         public void displayoptions(string[] options, string menuname)
         {
             Console.Clear();
-            Console.WriteLine($"[{menuname}]");
-            char prefix = '<'; // Indicates what is selected
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"{menuname}\n");
+            Console.ForegroundColor = ConsoleColor.White;
+            char suffix = '<'; // Indicates what is selected
+            char prefix = '>'; // Indicates what is selected
             for (int i = 0; i < options.Length; i++)
             {
-                if (options[i] == options[index]) Console.WriteLine($"{">"}{options[i]}{prefix}");
+                if (options[i] == options[index])
+                {
+                    Console.ForegroundColor = ConsoleColor.White;
+
+                    Console.Write($"{prefix}");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+
+                    Console.Write($"{options[i]}");
+                    Console.ForegroundColor = ConsoleColor.White;
+
+                    Console.WriteLine($"{suffix}");
+                    Console.ForegroundColor = ConsoleColor.White;
+
+                }
                 else Console.WriteLine($"{options[i]}");
             }
         }

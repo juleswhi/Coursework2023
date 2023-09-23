@@ -1,17 +1,24 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using Utils;
 using System.Threading;
+using Utils;
 
 namespace ClaredonHighSchoolSkiTrip
 {
 
     class Login : ReadData
     {
-        
+
         private string staffPath = "Staff.csv";
+
+        public void LoginLoop()
+        {
+            Login:
+            if (logIntoAccount()) GoToMainMenu();
+            else goto Login;
+        }
+
+
+
 
         private string?[] getDetails()
         {
@@ -23,20 +30,35 @@ namespace ClaredonHighSchoolSkiTrip
             */
 
             // Ask And Store Username
-            Console.Clear();
             Console.WriteLine("Please Enter Your Username");
             Console.Write("> ");
+            bool validReturn = true;
             string? uname = Console.ReadLine();
+            uname.ValidateString(() =>
+            {
+                IncorrectDetails();
+                validReturn = false;
+            });
+            if (!validReturn) return null;
+
+
 
             // Ask And Store Password
             Console.WriteLine("Please Enter Your Password");
             Console.Write("> ");
             string? pword = Console.ReadLine();
+            pword.ValidateString(() =>
+            {
+                IncorrectDetails();
+                validReturn = false;
+            });
 
             string?[] details = { uname, pword };
             return details;
 
         }
+
+
 
 
         public bool logIntoAccount()
@@ -46,44 +68,35 @@ namespace ClaredonHighSchoolSkiTrip
 
             string?[] enteredDetails = getDetails();
 
+            if (enteredDetails == null) return false;
+
+
             bool breakLoop = false;
 
-            /*
-
-                Int.Loop is a extension method
-
-                makes looping much quicker
-
-                using ForLoop;
-
-            */
-
-            int i = -1;
-            data.GetLength(0).Loop(() =>
+            for (int i = 0; i < data.GetLength(0); i++)
             {
-                i++;
-                data.GetLength(1).Loop(() =>
-                 {
+                if (enteredDetails[0] == data[i, 0])
+                {
+                    if (enteredDetails[1] == data[i, 1])
+                    {
+                        breakLoop = true;
+                    }
+                }
+            }
 
-                     if (enteredDetails[0] == data[i, 0])
-                     {
-                         if (enteredDetails[1] == data[i, 1])
-                         {
-                             breakLoop = true;
-                         }
-                     }
-                 });
-            });
 
             if (!breakLoop) { IncorrectDetails(); return false; }
 
-            Console.WriteLine("Loggin In");
+            Console.WriteLine("Logging In.");
             Thread.Sleep(250);
+
 
             // Main Menu
             return true;
 
         }
+
+
 
         private void IncorrectDetails()
         {
@@ -98,6 +111,7 @@ namespace ClaredonHighSchoolSkiTrip
 
             Console.ReadKey();
 
+            Console.Clear();
         }
 
     }

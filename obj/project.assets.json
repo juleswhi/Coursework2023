@@ -1,45 +1,38 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    "net7.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\DevUser\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\elliot alderson\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\ClaredonHighSchoolSkiTrip\\ClaredonHighSchoolSkiTrip\\ClaredonHighSchoolSkiTrip.csproj",
+      "projectUniqueName": "C:\\Users\\elliot alderson\\Documents\\GitHub\\ClaredonSkiTrip\\ClaredonHighSchoolSkiTrip.csproj",
       "projectName": "ClaredonHighSchoolSkiTrip",
-      "projectPath": "Z:\\ClaredonHighSchoolSkiTrip\\ClaredonHighSchoolSkiTrip\\ClaredonHighSchoolSkiTrip.csproj",
-      "packagesPath": "C:\\Users\\DevUser\\.nuget\\packages\\",
-      "outputPath": "Z:\\ClaredonHighSchoolSkiTrip\\ClaredonHighSchoolSkiTrip\\obj\\",
+      "projectPath": "C:\\Users\\elliot alderson\\Documents\\GitHub\\ClaredonSkiTrip\\ClaredonHighSchoolSkiTrip.csproj",
+      "packagesPath": "C:\\Users\\elliot alderson\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\elliot alderson\\Documents\\GitHub\\ClaredonSkiTrip\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\DevUser\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\elliot alderson\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "netcoreapp7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net7.0": {
+          "targetAlias": "netcoreapp7.0",
           "projectReferences": {}
         }
       },
@@ -47,27 +40,49 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "default"
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
+      "net7.0": {
+        "targetAlias": "netcoreapp7.0",
         "imports": [
           "net461",
           "net462",
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.8, 7.0.8]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.8, 7.0.8]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.8, 7.0.8]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.8, 7.0.8]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.6.23330.14\\RuntimeIdentifierGraph.json"
       }
     }
   }

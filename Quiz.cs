@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
-using Utils;
 using System.Linq;
+using Utils;
 
 namespace ClaredonHighSchoolSkiTrip
 {
@@ -13,7 +11,7 @@ namespace ClaredonHighSchoolSkiTrip
         {
 
             "How do you slow down on the slope?",
-            "What is the height of the slope?",
+            "What is the height of the highest slope?",
             "What do you use to get up the slope?",
             "At what inverals should you go down the slope?",
             "How Tight Should Your Boots Be?",
@@ -38,7 +36,7 @@ namespace ClaredonHighSchoolSkiTrip
             0,
             2,
             1
-            
+
         };
 
         private int[] enteredAnswers;
@@ -52,30 +50,41 @@ namespace ClaredonHighSchoolSkiTrip
          * Idea: Use menu system for quiz
          * 
          */
-        string[] test = { "hello" };
 
         public void StartQuiz()
         {
+
+            ShowStudents studentselecter = new ShowStudents();
+            string studentname = studentselecter.SelectStudent();
+
             enteredAnswers = new int[questions.Length];
 
             ArrayUtils<string> arrayUtils = new ArrayUtils<string>();
-            
 
-           for(int i = 0; i < questions.Length; i++)
-           {
+
+            for (int i = 0; i < questions.Length; i++)
+            {
                 // RunMenu returns an index, which can then be compared to correct Answers
                 DisplayMenu menu = new DisplayMenu($"{questions[i]}", arrayUtils.GetRow(possibleAnswers, i));
                 int answer = menu.RunMenu();
-                Console.WriteLine($"Your Answer Was {answer}");
-                System.Threading.Thread.Sleep(2000);
                 enteredAnswers[i] = answer;
-           }
+            }
 
-           Grade gradeMarker = new Grade(enteredAnswers, answers);
-           char grade = gradeMarker.grade;
+            Grade gradeMarker = new Grade(enteredAnswers, answers);
+            char grade = gradeMarker.grade;
 
 
-            5.Loop(() => { Console.WriteLine($"Your Grade is {grade}"); System.Threading.Thread.Sleep(2000); });
+
+            AddStudentDetails addStudentDetails = new AddStudentDetails("Students.csv");
+
+            addStudentDetails.addGrade(studentname, grade.ToString());
+
+            Console.Clear();
+            Console.WriteLine($"{studentname}'s score was a {grade}");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Press any key to return to main menu");
+            Console.ReadKey();
+            GoToMainMenu();
 
         }
 
@@ -98,15 +107,14 @@ namespace ClaredonHighSchoolSkiTrip
         private int CompareAnswers()
         {
             int score = 0;
-            int index = 0;
-            answers.Length.Loop(() => { 
-                if(enteredAnswers[index] == answers[index])
+
+            for (int i = 0; i < answers.Length; i++)
+            {
+                if (enteredAnswers[i] == answers[i])
                 {
                     score++;
                 }
-                index++;
-            });
-
+            }
 
 
             return score;
@@ -133,6 +141,23 @@ namespace ClaredonHighSchoolSkiTrip
             D = 2,
             E = 1,
             F = 0
+        }
+    }
+
+
+    class ShowStudents : ReadData
+    {
+        public string SelectStudent()
+        {
+            string[,] data = readData("Students.csv", 7);
+
+            DisplayMenu dm = new DisplayMenu("Select Student",
+                Enumerable.Range(0, data.GetLength(0) - 1)
+                .Select(x => $"{data[x + 1, 1]} {data[x + 1, 2]}")
+                .ToArray()
+                );
+            int index = dm.RunMenu() + 1;
+            return data[index, 0];
         }
     }
 

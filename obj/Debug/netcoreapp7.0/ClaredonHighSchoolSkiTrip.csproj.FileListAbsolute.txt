@@ -1,0 +1,15 @@
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\bin\Debug\netcoreapp7.0\ClaredonHighSchoolSkiTrip.exe
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\bin\Debug\netcoreapp7.0\ClaredonHighSchoolSkiTrip.deps.json
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\bin\Debug\netcoreapp7.0\ClaredonHighSchoolSkiTrip.runtimeconfig.json
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\bin\Debug\netcoreapp7.0\ClaredonHighSchoolSkiTrip.dll
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\bin\Debug\netcoreapp7.0\ClaredonHighSchoolSkiTrip.pdb
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\obj\Debug\netcoreapp7.0\ClaredonHighSchoolSkiTrip.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\obj\Debug\netcoreapp7.0\ClaredonHighSchoolSkiTrip.AssemblyInfoInputs.cache
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\obj\Debug\netcoreapp7.0\ClaredonHighSchoolSkiTrip.AssemblyInfo.cs
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\obj\Debug\netcoreapp7.0\ClaredonHighSchoolSkiTrip.csproj.CoreCompileInputs.cache
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\obj\Debug\netcoreapp7.0\ClaredonHighSchoolSkiTrip.sourcelink.json
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\obj\Debug\netcoreapp7.0\ClaredonHighSchoolSkiTrip.dll
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\obj\Debug\netcoreapp7.0\refint\ClaredonHighSchoolSkiTrip.dll
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\obj\Debug\netcoreapp7.0\ClaredonHighSchoolSkiTrip.pdb
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\obj\Debug\netcoreapp7.0\ClaredonHighSchoolSkiTrip.genruntimeconfig.cache
+C:\Users\elliot alderson\Documents\GitHub\ClaredonSkiTrip\obj\Debug\netcoreapp7.0\ref\ClaredonHighSchoolSkiTrip.dll

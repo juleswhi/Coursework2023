@@ -1,25 +1,28 @@
+using System;
 namespace DataValidation
 {
     public static class ValidateData
     {
-        public static bool Validate(this int data, int min, int max)
+        public static void Validate(Action test, Action fail)
         {
-            if(data > min && data < max)
-                return true;
+            try
+            {
+                test();
+            }
+            catch (Exception ex)
+            {
+                fail();
+            }
 
-            else return false;
+
         }
 
-        public static bool Validate(this string data)
-        {
 
-            return true;
-        }
+        public static bool isValidInt(string input) => Int32.TryParse(input, out int result);
 
-        public static bool Validate(this float data)
-        {
 
-            return true;
-        }
+
+
+
     }
 }
